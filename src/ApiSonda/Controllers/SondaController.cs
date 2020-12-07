@@ -14,12 +14,11 @@ namespace ApiSonda.Controllers
     {
         [HttpGet]
         [Route("/movimentar")]
-        public IActionResult MovimentarSonda([FromServices] ISondaServicos sondaServicos, string posicaoAtual, string direcaoDoMovimento)
+        public IActionResult MovimentarSonda([FromServices] ISondaServicos sondaServicos, string tamanhoQuadrante, string posicaoAtual, string sequenciaMovimento)
         {
+            string posicaoSonda1 = "1 3 N";//sondaServicos.MonvimentaSonda(tamanhoQuadrante, posicaoAtual, sequenciaMovimento);
 
-            string posicaoCardinal = sondaServicos.DefineAlinhamentoCardinal(posicaoAtual, direcaoDoMovimento);
-
-            return Ok(new { posicaoCardinal = sondaServicos.DefineAlinhamentoCardinal(posicaoAtual, direcaoDoMovimento) });
+            return Ok(new { posicaoSonda1 = posicaoSonda1, posicaoSonda2 = posicaoSonda1 });
         }
     }
 }

@@ -13,5 +13,13 @@
             }
             return new Dominio.SondaDominio().DefineAlinhamentoCardinal(posicaoAtual, direcaoDoMovimento);
         }
+
+        public string MonvimentaSonda(string tamanhoQuadrante, string posicaoAtual, string sequenciaMovimento)
+        {
+
+
+
+            return string.Empty;
+        }
     }
 }
