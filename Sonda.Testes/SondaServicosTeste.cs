@@ -1,5 +1,4 @@
 using Sonda.Servicos;
-using System;
 using Xunit;
 
 namespace Sonda.Testes

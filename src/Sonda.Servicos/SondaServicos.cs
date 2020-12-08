@@ -10,22 +10,16 @@ namespace Sonda.Servicos
             direcaoDoMovimento = direcaoDoMovimento.ToUpper();
 
             if (posicaoAtual != "N" && posicaoAtual != "E" && posicaoAtual != "S" && posicaoAtual != "W"
-                && direcaoDoMovimento != "L" && direcaoDoMovimento != "R")
+                && (direcaoDoMovimento != "L" && direcaoDoMovimento != "R"))
             {
                 return "Os pontos cardinais só podem ser N, E, S ou W";
             }
             return new Dominio.SondaDominio().DefineAlinhamentoCardinal(posicaoAtual, direcaoDoMovimento);
         }
-
+        
         public string MonvimentaSonda(string tamanhoQuadrante, string posicaoAtual, string sequenciaMovimento)
         {
             int quantidadeDeMovimentos = sequenciaMovimento.Length;
-
-            //string[] t = sequenciaMovimento.ToCharArray();
-            //char u = t[1];
-
-
-            //string[] posicaoInicial = posicaoAtual.Split(' ');
 
             for (int i = 0; i < quantidadeDeMovimentos; i++)
             {
@@ -39,8 +33,6 @@ namespace Sonda.Servicos
                     posicaoAtual = DefinePosicao(posicaoAtual);
                 }
             }
-
-
             return posicaoAtual;
         }
 
@@ -68,12 +60,7 @@ namespace Sonda.Servicos
                     x--;
                     posicaoAtual = Convert.ToString(x) + posicaoAtual[1..];
                     break;
-                    //string.Concat(posicaoAtual.Remove(4, 1), novaDirecaoSonda);
-                    //posicaoAtual = string.Concat(posicaoAtual.Remove(2, 1), Convert.ToString(Convert.ToInt32(posicaoAtual.Substring(0, 1)) - 1));
             }
-
-
-
             return posicaoAtual;
         }
     }

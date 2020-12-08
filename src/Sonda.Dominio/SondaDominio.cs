@@ -1,11 +1,7 @@
-﻿using System;
-
-namespace Sonda.Dominio
+﻿namespace Sonda.Dominio
 {
     public class SondaDominio
     {
-        public int PossicaoX { get; set; }
-        public int PossicaoY { get; set; }
         public string AlinhamentoCardinal { get; set; }
 
         public string DefineAlinhamentoCardinal(string posicaoAtual, string direcaoDoMovimento)
@@ -41,7 +37,5 @@ namespace Sonda.Dominio
             }
             return AlinhamentoCardinal;
         }
-
-
     }
 }
